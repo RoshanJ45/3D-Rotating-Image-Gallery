@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+      <style>
+          * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotateAnim 20s linear infinite;
+}
+
+@keyframes rotateAnim {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.wrapper .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(280px);
+}
+
+.wrapper .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, transparent, #0005);
+}
+      </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Rotating Image Gallery</title>
+
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <span class="slide" style="--i: 1"
+        ><img src="images/img1.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 2"
+        ><img src="images/img2.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 3"
+        ><img src="images/img3.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 4"
+        ><img src="images/img4.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 5"
+        ><img src="images/img5.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 6"
+        ><img src="images/img6.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 7"
+        ><img src="images/img7.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 8"
+        ><img src="images/img8.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 9"
+        ><img src="images/img9.jpg" alt=""
+      /></span>
+      <span class="slide" style="--i: 10">
+        <img src="images/img10.jpg" alt="" />
+      </span>
+    </div>
+  </body>
+</html>
